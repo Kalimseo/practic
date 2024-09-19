@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Document</title>
+</head>
+<body>
+   
+   <script>
+    
+        function func() {
+            var x = Number(document.forms["form"].elements["x"].value);
+            var m = Number(document.forms["form"].elements["m"].value);
+            var s = 0;
+            
+            if(Math.abs(x)>1) {
+                alert("Модуль числа больше 1!");
+                return;
+            }
+            
+            if(m<1) {
+                alert("Конечное значение меньше начального!");
+                return;
+            }
+            
+            if(m%1>0) {
+                alert("Попытайтесь использовать ЦЕЛОЕ число как конечное");
+                return;
+            }
+            
+            else{
+            
+            for (var i = 1; i!=m; i++) {
+                s = s+(((2*i-1)*x)**(2*i+1))/((2*i)*(2*i-1));
+            }}
+            
+            alert(s);
+        }
+        
+    </script>
+   
+    <form id="form">
+        <input type="text" id="x" placeholder="Введите значение x, модуль которого будет меньше 1"> 
+        <input type="text" id="m" placeholder="Введите конечное значение">
+        <input type="submit" onclick="func()">
+    </form>
+    
+    
+</body>
+</html>
