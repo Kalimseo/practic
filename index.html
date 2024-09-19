@@ -11,9 +11,11 @@
         function func() {
             var x = Number(document.forms["form"].elements["x"].value);
             var m = Number(document.forms["form"].elements["m"].value);
-            var s = 0;
+            var n1 = 0;
+            var n2 = 0;
+            var p = 3.14;
             
-            if(Math.abs(x)>1) {
+            if(Math.abs(x)>=1) {
                 alert("Модуль числа больше 1!");
                 return;
             }
@@ -30,11 +32,21 @@
             
             else{
             
-            for (var i = 1; i!=m; i++) {
-                s = s+(((2*i-1)*x)**(2*i+1))/((2*i)*(2*i-1));
+            for (var i = 1; i>(m+1); i++) {
+                var pn1 = 0;
+                var pn2 = 0;
+                
+                for (var j = 1; j>(i+1); j++){
+                    pn1 *= 2*j-1;
+                }
+                n1 += pn1 * (x**(2*i+1));
+                for (var j = 1; j>(i+1); j++){
+                    pn2 *= 2*j+1;
+                }
+                n2 += pn2 * (x**(2*i+1))
             }}
             
-            alert(s);
+            alert((p/2)-(n1/n2));
         }
         
     </script>
