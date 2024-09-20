@@ -21,7 +21,7 @@
             }
             
             if(m<1) {
-                alert("Конечное значение меньше начального!");
+                alert("Конечное значение меньше начального! Впешите число больше чем 1");
                 return;
             }
             
@@ -32,21 +32,24 @@
             
             else{
             
-            for (var i = 1; i>(m+1); i++) {
-                var pn1 = 0;
-                var pn2 = 0;
+            for (var i = 1; i<(m+1); i++) {
+                var pn1 = 1;
+                var pn2 = 1;
                 
-                for (var j = 1; j>(i+1); j++){
-                    pn1 *= 2*j-1;
+                for (var j = 1; j<(i+1); j++){
+                    pn1 = pn1 * (2*j-1);
                 }
-                n1 += pn1 * (x**(2*i+1));
-                for (var j = 1; j>(i+1); j++){
-                    pn2 *= 2*j+1;
+                n1 = n1 + pn1*(Math.sqrt(x,2*i+1));
+                for (var j = 1; j<(i+1); j++){
+                    pn2 = pn2 * (2*j+1);
                 }
-                n2 += pn2 * (x**(2*i+1))
-            }}
+                n2 = n2 + pn2 * (Math.sqrt(x,2*i+1));
+                
+            }
             
             alert((p/2)-(n1/n2));
+        }
+            
         }
         
     </script>
